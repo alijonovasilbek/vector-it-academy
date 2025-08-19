@@ -1,0 +1,23 @@
+
+@if (true){
+
+<h1 class=" !mb-3 text-center font-bold text-black text-3xl m-0">My courses</h1>
+<div class="w-full grid grid-cols-4 gap-4">
+  @for (course of allCourses?.purchased; track $index) {
+    <app-course-item [item]="course" [purchased]="true"></app-course-item>
+  }
+</div>
+
+}
+
+<div class="w-full my-7 border text-red"></div>
+
+<h1 class=" !mb-3 text-center font-bold text-black text-3xl m-0">Available courses</h1>
+<div class="w-full grid grid-cols-4 gap-4">
+  @for (course of allCourses?.others; track $index) {
+    <app-course-item [item]="course" [purchased]="false"></app-course-item>
+  }
+</div>
+
+
+
