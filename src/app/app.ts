@@ -1,20 +1,19 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "./core/components/navbar/navbar";
+import { ChangeDetectorRef, Component, inject, OnDestroy, OnInit, signal } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  selector: "app-root",
+  imports: [ RouterOutlet],
   template: `
-    <app-navbar></app-navbar>
 
-    <main class="p-3">
+    <router-outlet></router-outlet>
 
-    <router-outlet />
-    </main>
+
   `,
   styles: [],
 })
-export class App {
-  protected readonly title = signal('vector-it-academy');
+export class App  {
+  
+
 }

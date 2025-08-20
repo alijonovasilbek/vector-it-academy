@@ -1,10 +1,23 @@
-import { Routes } from '@angular/router';
-import { StudentsComponent } from './students/students';
-import { AdminComponent } from './admin/admin';
-import { MentorComponent } from './mentor/mentor';
+import { Routes } from "@angular/router";
+import { AdminComponent } from "./admin/admin";
 
 export const routes: Routes = [
-    { path:'students',component: StudentsComponent },
-    { path:'mentor',component: MentorComponent },
-    { path:'admin',component: AdminComponent }
+  {
+    path: "",
+    loadComponent: () => import("./core/layouts/layout-container"),
+    children: [
+      {
+        path: "students",
+        loadChildren: () => import("./students/student.routes"),
+      },
+      {
+        path: "mentor",
+        loadComponent: () =>
+          import("./mentor/mentor").then((m) => m.MentorComponent),
+      },
+    ],
+  },
+
+  { path: "admin", component: AdminComponent },
+  { path: "**", redirectTo: "/admin" },
 ];

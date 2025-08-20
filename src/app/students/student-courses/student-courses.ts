@@ -9,7 +9,7 @@ import { IcoursesResponse, StudentsService } from '@students/services/students.s
     standalone: true
 })
 
-export class StudentCoursesComponent implements OnInit {
+export  class StudentCoursesComponent implements OnInit {
     studentService=inject(StudentsService);
 
     allCourses?: IcoursesResponse;

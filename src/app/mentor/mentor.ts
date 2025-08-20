@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-mentor',
-    template: ``
+    template: `mentor html`
 })
 
 export class MentorComponent implements OnInit {
